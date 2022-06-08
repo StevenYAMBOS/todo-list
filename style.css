@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color: #0d2d64;
+    color:white;
+    min-height: 100vh;
+}
+
+header{
+    font-size: 1.5rem;
+}
+
+header, form{
+    min-height: 20vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button{
+    padding:0.5rem;
+    font-size:2rem;
+    border:none;
+    background: white;
+}
+
+form button{
+    color:#0d2d64;
+    background: white;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover{
+    filter: brightness(80%);
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list{
+    min-width: 30%;
+    /* enlever les puces */
+    list-style: none;
+}
+
+.todo{
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+/* Mettre les buttons sur le côté */
+.todo li{
+    flex: 1;
+}
+
+.trash-btn, .complete-btn{
+    color: white;
+    background-color: #0d2d64;
+    border: 2px solid rgba(17, 0, 59, 0.642);
+    border-radius: 18px;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.trash-btn:hover, .complete-btn:hover{
+    background-color: white;
+    color: #0d2d64;
+}
+
+.complete-btn{
+    margin-right: 0.5px;
+}
+
+.todo-item{
+    padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check{
+    pointer-events: none;
+}
+
+/* Bouton validé */
+.completed{
+    /* Trait barré */
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* Effet de chute */
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+/* Impossible de modifier un select
+Pour cela on a créée une class select en html
+On va donc styliser cette class */
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.select{
+    margin: 1rem;
+    position:relative;
+    overflow:hidden;
+}
+
+select{
+    /* couleur du texte */
+    color: #0d2d64;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background: black;
+    top:0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+}
+
+.select:hover::after{
+    background: white;
+    color: black;
+}
